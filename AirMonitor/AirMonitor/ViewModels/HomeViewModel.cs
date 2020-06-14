@@ -38,6 +38,7 @@ namespace AirMonitor.ViewModels
             IsBusy = false;
         }
 
+
         private ICommand _goToDetailsCommand;
         public ICommand GoToDetailsCommand => _goToDetailsCommand ?? (_goToDetailsCommand = new Command<Measurement>(OnGoToDetails));
 

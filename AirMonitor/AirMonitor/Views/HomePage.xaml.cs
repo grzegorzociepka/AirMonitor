@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using AirMonitor.Models;
+﻿using AirMonitor.Models;
 using AirMonitor.ViewModels;
 using Xamarin.Forms;
 
