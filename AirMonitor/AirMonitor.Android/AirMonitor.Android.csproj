@@ -58,6 +58,9 @@
     <PackageReference Include="sqlite-net-pcl">
       <Version>1.7.335</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.Forms.Maps">
+      <Version>4.3.0.908675</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -143,6 +146,26 @@
       <Generator></Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_home_black_24.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-hdpi\baseline_location_on_black_24dp.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-mdpi\baseline_location_on_black_24dp.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xhdpi\baseline_location_on_black_24dp.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_location_on_black_24dp.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_location_on_black_24dp.png">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>

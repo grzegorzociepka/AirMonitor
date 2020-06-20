@@ -35,6 +35,14 @@ namespace AirMonitor.ViewModels
             var data = await GetMeasurementsForInstallations(installations);
             Items = new List<Measurement>(data);
 
+            Locations = Items.Select(s =>
+            new MapLocation
+            {
+                Address = s.Installation.Address.Description,
+                Description = "CQAI: " + s.CurrentDisplayValue,
+                Position = new Xamarin.Forms.Maps.Position(s.Installation.Location.Latitude, s.Installation.Location.Longitude)
+            }).ToList();
+
             IsBusy = false;
         }
 
@@ -47,11 +55,27 @@ namespace AirMonitor.ViewModels
             _navigation.PushAsync(new DetailsPage(item));
         }
 
+        private ICommand _goToMapDetailsCommand;
+        public ICommand GoToMapDetailsCommand => _goToMapDetailsCommand ?? (_goToMapDetailsCommand = new Command<string>(OnGoToMapDetails));
+
+        private void OnGoToMapDetails(string address)
+        {
+            var item = Items.FirstOrDefault(x => x.Installation.Address.Description.Equals(address));
+            _navigation.PushAsync(new DetailsPage(item));
+        }
+
         private List<Measurement> _items;
         public List<Measurement> Items
         {
             get => _items;
             set => SetProperty(ref _items, value);
+        }
+
+        private List<MapLocation> _locations;
+        public List<MapLocation> Locations
+        {
+            get => _locations;
+            set => SetProperty(ref _locations, value);
         }
 
         private bool _isBusy;
